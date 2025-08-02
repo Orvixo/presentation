@@ -8,6 +8,11 @@ from api.v1.ppt.router import API_V1_PPT_ROUTER
 app = FastAPI(lifespan=app_lifespan)
 
 
+@app.get("/")
+async def hello():
+    return {"message": "Hello from FastAPI!"}
+
+
 # Routers
 app.include_router(API_V1_PPT_ROUTER)
 
